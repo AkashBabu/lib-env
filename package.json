@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "export NODE_ENV=test && mocha --require babel-core/register --require babel-polyfill test/**/*.test.js --exit",
+    "coverage": "export NODE_ENV=test && nyc mocha --require babel-core/register --require babel-polyfill test/**/*.test.js --exit",
     "test:dev": "export NODE_ENV=test &&  mocha --require babel-core/register --require babel-polyfill test/**/*.test.js",
     "build": "$(npm bin)/babel src --out-dir dist",
     "lint": "$(npm bin)/eslint --config .eslintrc src/index.js"
@@ -25,9 +26,10 @@
   },
   "homepage": "https://github.com/AkashBabu/lib-env#readme",
   "precommit": [
-      "lint",
-      "build",
-      "test"
+    "lint",
+    "build",
+    "test",
+    "coverage"
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -48,6 +50,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
     "pre-commit": "^1.2.2"
   }
 }
