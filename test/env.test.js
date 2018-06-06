@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 
-import { IsENVDev, IsENVProd, IsENVTest, GetENV } from '../'
-;
+import { IsENVDev, IsENVProd, IsENVTest, GetENV } from '../src';
 
 describe('#env NODE_ENV test', () => {
     it('should return dev&prod as false if NODE_ENV=test', () => {
@@ -10,5 +9,4 @@ describe('#env NODE_ENV test', () => {
         expect(IsENVDev).to.be.false;
         expect(IsENVProd).to.be.false;
     });
-})
-;
+});
