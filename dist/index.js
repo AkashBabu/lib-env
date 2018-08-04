@@ -10,6 +10,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var IsENVTest = process.env.NODE_ENV === 'test';
 var IsENVDev = process.env.NODE_ENV === 'dev';
+var IsENVStag = process.env.NODE_ENV === 'stag';
 var IsENVProd = process.env.NODE_ENV === 'prod';
 
 function GetENV() {
@@ -18,5 +19,6 @@ function GetENV() {
 
 exports.IsENVTest = IsENVTest;
 exports.IsENVDev = IsENVDev;
+exports.IsENVStag = IsENVStag;
 exports.IsENVProd = IsENVProd;
 exports.GetENV = GetENV;
