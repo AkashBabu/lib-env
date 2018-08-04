@@ -5,6 +5,7 @@
 
 const IsENVTest = process.env.NODE_ENV === 'test';
 const IsENVDev = process.env.NODE_ENV === 'dev';
+const IsENVStag = process.env.NODE_ENV === 'stag';
 const IsENVProd = process.env.NODE_ENV === 'prod';
 
 function GetENV() {
@@ -14,6 +15,7 @@ function GetENV() {
 export {
     IsENVTest,
     IsENVDev,
+    IsENVStag,
     IsENVProd,
     GetENV,
 };
