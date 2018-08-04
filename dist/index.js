@@ -1,24 +1,22 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _env;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // Initialize NODE_ENV variable
 (function _initENV() {
-    process.env.NODE_ENV = (process.env.NODE_ENV || 'dev').toLowerCase();
+    process.env.NODE_ENV = (process.env.NODE_ENV || 'test').toLowerCase();
 })();
-
-var IsENVTest = process.env.NODE_ENV === 'test';
-var IsENVDev = process.env.NODE_ENV === 'dev';
-var IsENVStag = process.env.NODE_ENV === 'stag';
-var IsENVProd = process.env.NODE_ENV === 'prod';
 
 function GetENV() {
     return process.env.NODE_ENV;
 }
 
-exports.IsENVTest = IsENVTest;
-exports.IsENVDev = IsENVDev;
-exports.IsENVStag = IsENVStag;
-exports.IsENVProd = IsENVProd;
-exports.GetENV = GetENV;
+var env = (_env = {}, (0, _defineProperty3.default)(_env, 'IsENV' + process.env.NODE_ENV[0].toUpperCase() + process.env.NODE_ENV.slice(1), true), (0, _defineProperty3.default)(_env, 'GetENV', GetENV), _env);
+
+module.exports = env;
